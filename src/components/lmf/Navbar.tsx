@@ -115,7 +115,28 @@ const Navbar = () => {
           ))}
         </ul>
 
-
+        <div className="hidden md:flex items-center gap-2">
+          <a
+            href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Kammanahalli%20branch."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 font-display text-[9px] tracking-[0.2em] px-3 py-2 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
+            title="Enquire – Kammanahalli"
+          >
+            <WhatsAppIcon className="h-3.5 w-3.5" />
+            KMN
+          </a>
+          <a
+            href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20HRBR%20branch."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 font-display text-[9px] tracking-[0.2em] px-3 py-2 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
+            title="Enquire – HRBR"
+          >
+            <WhatsAppIcon className="h-3.5 w-3.5" />
+            HRBR
+          </a>
+        </div>
 
         <button
           aria-label="Toggle menu"

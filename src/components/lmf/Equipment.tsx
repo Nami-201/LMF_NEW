@@ -1,123 +1,128 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Activity, Zap, Wrench } from "lucide-react";
-import equipmentImg from "@/assets/lmf-equipment.jpg";
+import { Award, Dumbbell, Flame, HeartPulse, Medal, Target, Trophy, Zap } from "lucide-react";
 
-const features = [
+const trainers = [
   {
-    icon: Wrench,
-    title: "Built to Last",
-    desc: "Commercial-grade steel frames engineered for decades of heavy use.",
+    icon: Trophy,
+    name: "Leon Castelino",
+    title: "Head Coach · Strength",
+    experience: "15+ yrs",
+    desc: "IFBB-certified strength coach. Specializes in powerlifting and hypertrophy programming.",
   },
   {
-    icon: Activity,
-    title: "Biomechanics",
-    desc: "Movement paths designed around real human anatomy for maximum gains.",
+    icon: Flame,
+    name: "Arjun Rao",
+    title: "HIIT & Conditioning",
+    experience: "10 yrs",
+    desc: "Ex-national athlete. Builds brutal metabolic conditioning circuits that burn fat fast.",
+  },
+  {
+    icon: Dumbbell,
+    name: "Rohan Mehta",
+    title: "Bodybuilding Specialist",
+    experience: "12 yrs",
+    desc: "Stage-prep expert. Has coached 30+ competitors to regional and national podiums.",
+  },
+  {
+    icon: HeartPulse,
+    name: "Priya Nair",
+    title: "Women's Strength",
+    experience: "8 yrs",
+    desc: "Pre/post-natal certified. Empowering women through progressive barbell training.",
+  },
+  {
+    icon: Target,
+    name: "Karan Singh",
+    title: "Olympic Lifting",
+    experience: "11 yrs",
+    desc: "USAW Level 2 coach. Snatch, clean & jerk, and explosive athletic development.",
   },
   {
     icon: Zap,
-    title: "Performance",
-    desc: "Smooth bearings, precise loading — every rep feels powerful.",
+    name: "Sneha Iyer",
+    title: "Mobility & Recovery",
+    experience: "7 yrs",
+    desc: "FRC-certified. Keeps lifters moving pain-free with mobility and soft-tissue work.",
   },
   {
-    icon: ShieldCheck,
-    title: "Safety First",
-    desc: "Reinforced safeties and stable bases so you can push your limits.",
+    icon: Medal,
+    name: "Vikram Shetty",
+    title: "Boxing & Combat",
+    experience: "14 yrs",
+    desc: "Former state-level boxer. Striking technique, footwork, and fight conditioning.",
+  },
+  {
+    icon: Award,
+    name: "Ananya Reddy",
+    title: "Nutrition & Transformation",
+    experience: "9 yrs",
+    desc: "ISSN nutritionist. Builds sustainable plans for fat loss, muscle gain and performance.",
   },
 ];
 
 const Equipment = () => {
   return (
-    <section id="equipment" className="relative py-16 md:py-20 overflow-hidden bg-background">
+    <section id="equipment" className="relative py-16 md:py-24 overflow-hidden bg-background">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-primary/40 bg-primary/5 clip-slant">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="font-display text-[10px] tracking-[0.25em] text-primary">
-                POWERED BY JERAI FITNESS
-              </span>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mx-auto text-center mb-14"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-primary/40 bg-primary/5 clip-slant">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="font-display text-[10px] tracking-[0.25em] text-primary">
+              MEET THE TEAM
+            </span>
+          </div>
 
-            <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6">
-              Train with the <span className="text-primary text-glow">Best</span> Equipment
-            </h2>
+          <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6">
+            Train with the <span className="text-primary text-glow">Best</span> Trainers
+          </h2>
 
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-xl">
-              We've outfitted LMF with <span className="text-foreground font-semibold">Jerai Fitness</span> —
-              India's most trusted professional-grade equipment brand. Built for serious lifters,
-              engineered for results, and designed to take everything you throw at it.
-            </p>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Decades of combined experience. Every coach at LMF is certified, competitive,
+            and obsessed with getting you results.
+          </p>
+        </motion.div>
 
-            <div className="grid sm:grid-cols-2 gap-5">
-              {features.map((f, i) => (
-                <motion.div
-                  key={f.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="group relative p-5 bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="shrink-0 w-11 h-11 flex items-center justify-center bg-gradient-primary clip-slant">
-                      <f.icon className="w-5 h-5 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-sm tracking-widest mb-1.5 group-hover:text-primary transition-colors">
-                        {f.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {f.desc}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right: Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            <div className="relative clip-slant overflow-hidden border border-border shadow-card">
-              <img
-                src={equipmentImg}
-                alt="Jerai Fitness professional gym equipment at LMF"
-                width={1024}
-                height={1024}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-background via-background/20 to-transparent" />
-            </div>
-
-            {/* Floating badge */}
-            <div className="absolute -bottom-5 -left-5 md:-left-8 bg-card border border-primary/50 px-5 py-3 shadow-glow clip-slant hidden sm:block">
-              <div className="font-display text-[10px] tracking-[0.25em] text-muted-foreground">
-                COMMERCIAL GRADE
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {trainers.map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
+              className="group relative p-6 bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-12 h-12 flex items-center justify-center bg-gradient-primary clip-slant">
+                  <t.icon className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <div className="font-display text-[10px] tracking-[0.2em] text-primary border border-primary/40 px-2 py-1">
+                  {t.experience}
+                </div>
               </div>
-              <div className="font-display text-lg text-primary text-glow">
-                100% JERAI
-              </div>
-            </div>
 
-            {/* Corner accents */}
-            <div className="absolute -top-2 -right-2 w-16 h-16 border-t-2 border-r-2 border-primary pointer-events-none" />
-          </motion.div>
+              <h3 className="font-display text-base tracking-wider mb-1 group-hover:text-primary transition-colors">
+                {t.name}
+              </h3>
+              <div className="font-display text-[10px] tracking-[0.25em] text-muted-foreground mb-3">
+                {t.title.toUpperCase()}
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {t.desc}
+              </p>
+
+              <div className="absolute -top-px -right-px w-8 h-8 border-t-2 border-r-2 border-primary/0 group-hover:border-primary transition-colors pointer-events-none" />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

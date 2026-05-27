@@ -160,7 +160,26 @@ const Navbar = () => {
                 <li key={l.href}>{renderLink(l, true)}</li>
               ))}
             </ul>
-
+            <div className="px-6 pb-6 flex flex-col gap-2">
+              <a
+                href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Kammanahalli%20branch."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 font-display text-[10px] tracking-[0.2em] px-4 py-3 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                Enquire – Kammanahalli
+              </a>
+              <a
+                href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20HRBR%20branch."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 font-display text-[10px] tracking-[0.2em] px-4 py-3 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                Enquire – HRBR
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,4 +1,4 @@
-import { Link as TLink, useRouterState, type LinkProps as TLinkProps } from "@tanstack/react-router";
+import { Link as TLink, useRouterState } from "@tanstack/react-router";
 import { forwardRef, type AnchorHTMLAttributes, type ReactNode } from "react";
 
 type CommonProps = {
@@ -6,6 +6,8 @@ type CommonProps = {
   children?: ReactNode;
   className?: string;
   onClick?: AnchorHTMLAttributes<HTMLAnchorElement>["onClick"];
+  target?: string;
+  rel?: string;
   "aria-label"?: string;
 };
 
@@ -15,12 +17,12 @@ function splitHash(to: string): { path: string; hash?: string } {
   return { path: to.slice(0, i) || "/", hash: to.slice(i + 1) };
 }
 
-export const Link = forwardRef<HTMLAnchorElement, CommonProps & Record<string, unknown>>(
+export const Link = forwardRef<HTMLAnchorElement, CommonProps>(
   ({ to, children, ...rest }, ref) => {
     const { path, hash } = splitHash(to);
-    const props = { to: path, hash, ...(rest as Partial<TLinkProps>) } as TLinkProps;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (
-      <TLink ref={ref} {...props}>
+      <TLink ref={ref} to={path as any} hash={hash} {...(rest as any)}>
         {children}
       </TLink>
     );
@@ -34,16 +36,16 @@ export type NavLinkProps = Omit<CommonProps, "className"> & {
   end?: boolean;
 };
 
-export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps & Record<string, unknown>>(
+export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
   ({ to, className, children, end, ...rest }, ref) => {
     const { path, hash } = splitHash(to);
     const current = useRouterState({ select: (s) => s.location.pathname });
     const isActive = end ? current === path : current === path || current.startsWith(path + "/");
     const cls = typeof className === "function" ? className({ isActive, isPending: false }) : className;
-    const props = { to: path, hash, className: cls, ...(rest as Partial<TLinkProps>) } as TLinkProps;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (
-      <TLink ref={ref} {...props}>
-        {children as ReactNode}
+      <TLink ref={ref} to={path as any} hash={hash} className={cls} {...(rest as any)}>
+        {children}
       </TLink>
     );
   },
@@ -55,7 +57,7 @@ export function useLocation() {
   return {
     pathname: location.pathname,
     hash: location.hash ? `#${location.hash}` : "",
-    search: location.searchStr ?? "",
+    search: (location as unknown as { searchStr?: string }).searchStr ?? "",
     state: null,
     key: location.href,
   };

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Dumbbell, Flame, UserCog, Activity, HeartPulse, Trophy } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-shim";
 import Navbar from "@/components/lmf/Navbar";
 import Footer from "@/components/lmf/Footer";
 import CTA from "@/components/lmf/CTA";

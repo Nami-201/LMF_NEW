@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@/lib/router-shim";
 import logo from "@/assets/lmf-logo.png";
 
 type NavLink = { label: string; href: string; type: "anchor" | "route" };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "@/lib/router-shim";
 import { Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/lmf-logo.png";
 

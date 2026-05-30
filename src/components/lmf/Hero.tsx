@@ -74,24 +74,6 @@ const Hero = () => {
         >
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-        >
-          {[
-            { num: "5K+", label: "Members" },
-            { num: "10+", label: "Coaches" },
-            { num: "24/7", label: "Access" },
-          ].map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="font-display text-2xl md:text-4xl text-primary text-glow">{s.num}</div>
-              <div className="mt-1 font-display text-[10px] tracking-[0.3em] text-muted-foreground">{s.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}

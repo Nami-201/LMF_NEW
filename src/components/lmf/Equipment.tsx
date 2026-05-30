@@ -95,7 +95,7 @@ const Equipment = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group relative text-left bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow overflow-hidden"
+              className="group relative bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow overflow-hidden cursor-pointer"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
@@ -104,24 +104,6 @@ const Equipment = () => {
                   loading="lazy"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-                <div className="absolute top-3 right-3 font-display text-[10px] tracking-[0.2em] text-primary border border-primary/60 bg-background/70 backdrop-blur px-2 py-1">
-                  {t.experience}
-                </div>
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-base tracking-wider mb-1 group-hover:text-primary transition-colors">
-                  {t.name}
-                </h3>
-                <div className="font-display text-[10px] tracking-[0.25em] text-muted-foreground mb-3">
-                  {t.title.toUpperCase()}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {t.desc}
-                </p>
-                <div className="mt-4 font-display text-[10px] tracking-[0.25em] text-primary">
-                  VIEW PROFILE →
-                </div>
               </div>
               <div className="absolute -top-px -right-px w-8 h-8 border-t-2 border-r-2 border-primary/0 group-hover:border-primary transition-colors pointer-events-none" />
             </motion.button>

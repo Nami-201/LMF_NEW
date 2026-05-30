@@ -1,66 +1,61 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Award, Dumbbell, Flame, HeartPulse, Medal, Target, Trophy, Zap } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import emmanuel from "@/assets/trainers/emmanuel.jpg";
+import rawlin from "@/assets/trainers/rawlin.jpg";
+import sathya from "@/assets/trainers/sathya.jpg";
+import sinclair from "@/assets/trainers/sinclair.jpg";
+import imran from "@/assets/trainers/imran.jpg";
+import rasoul from "@/assets/trainers/rasoul.jpg";
 
 const trainers = [
   {
-    icon: Trophy,
-    name: "Leon Castelino",
-    title: "Head Coach · Strength",
-    experience: "15+ yrs",
-    desc: "IFBB-certified strength coach. Specializes in powerlifting and hypertrophy programming.",
+    image: rasoul,
+    name: "Coach Rasoul",
+    title: "Master Coach",
+    experience: "15 yrs",
+    desc: "15 Years of Experience, 25+ Transformations, 100% Dedication.",
   },
   {
-    icon: Flame,
-    name: "Arjun Rao",
-    title: "HIIT & Conditioning",
-    experience: "10 yrs",
-    desc: "Ex-national athlete. Builds brutal metabolic conditioning circuits that burn fat fast.",
+    image: imran,
+    name: "Coach Imran",
+    title: "Club Manager · Kammanahalli",
+    experience: "10+ yrs",
+    desc: "Experience of over 10 years. Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
   },
   {
-    icon: Dumbbell,
-    name: "Rohan Mehta",
-    title: "Bodybuilding Specialist",
-    experience: "12 yrs",
-    desc: "Stage-prep expert. Has coached 30+ competitors to regional and national podiums.",
+    image: sathya,
+    name: "Coach Sathya",
+    title: "Certified Personal Trainer",
+    experience: "10+ yrs",
+    desc: "Certified fitness expert with 10+ years of experience. CPR Certified, Certified Personal Trainer.",
   },
   {
-    icon: HeartPulse,
-    name: "Priya Nair",
-    title: "Women's Strength",
-    experience: "8 yrs",
-    desc: "Pre/post-natal certified. Empowering women through progressive barbell training.",
+    image: sinclair,
+    name: "Coach Sinclair",
+    title: "Functional Training",
+    experience: "5+ yrs",
+    desc: "Certified fitness expert with 5+ years of experience, specializing in functional training and body transformation.",
   },
   {
-    icon: Target,
-    name: "Karan Singh",
-    title: "Olympic Lifting",
-    experience: "11 yrs",
-    desc: "USAW Level 2 coach. Snatch, clean & jerk, and explosive athletic development.",
+    image: emmanuel,
+    name: "Coach Emmanuel",
+    title: "Strength & Conditioning",
+    experience: "5 yrs",
+    desc: "Certified CPT, Strength & Conditioning Specialist, and Nutrition Coach from Spartan Official Academy with 5 years of hands-on experience in fitness.",
   },
   {
-    icon: Zap,
-    name: "Sneha Iyer",
-    title: "Mobility & Recovery",
-    experience: "7 yrs",
-    desc: "FRC-certified. Keeps lifters moving pain-free with mobility and soft-tissue work.",
-  },
-  {
-    icon: Medal,
-    name: "Vikram Shetty",
-    title: "Boxing & Combat",
-    experience: "14 yrs",
-    desc: "Former state-level boxer. Striking technique, footwork, and fight conditioning.",
-  },
-  {
-    icon: Award,
-    name: "Ananya Reddy",
-    title: "Nutrition & Transformation",
-    experience: "9 yrs",
-    desc: "ISSN nutritionist. Builds sustainable plans for fat loss, muscle gain and performance.",
+    image: rawlin,
+    name: "Coach Rawlin",
+    title: "Fitness Instructor",
+    experience: "2.5 yrs",
+    desc: "Certified fitness instructor at New Skills Academy, certified in nutrition with FBX training. Experience: 2 and a half years.",
   },
 ];
 
 const Equipment = () => {
+  const [active, setActive] = useState<number | null>(null);
+
   return (
     <section id="equipment" className="relative py-16 md:py-24 overflow-hidden bg-background">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
@@ -86,45 +81,86 @@ const Equipment = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Decades of combined experience. Every coach at LMF is certified, competitive,
-            and obsessed with getting you results.
+            Certified, competitive and obsessed with your results. Tap any coach to see their full profile.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {trainers.map((t, i) => (
-            <motion.div
+            <motion.button
+              type="button"
+              onClick={() => setActive(i)}
               key={t.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
-              className="group relative p-6 bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow"
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+              className="group relative text-left bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-12 h-12 flex items-center justify-center bg-gradient-primary clip-slant">
-                  <t.icon className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div className="font-display text-[10px] tracking-[0.2em] text-primary border border-primary/40 px-2 py-1">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={t.image}
+                  alt={`${t.name} — ${t.title}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute top-3 right-3 font-display text-[10px] tracking-[0.2em] text-primary border border-primary/60 bg-background/70 backdrop-blur px-2 py-1">
                   {t.experience}
                 </div>
               </div>
-
-              <h3 className="font-display text-base tracking-wider mb-1 group-hover:text-primary transition-colors">
-                {t.name}
-              </h3>
-              <div className="font-display text-[10px] tracking-[0.25em] text-muted-foreground mb-3">
-                {t.title.toUpperCase()}
+              <div className="p-5">
+                <h3 className="font-display text-base tracking-wider mb-1 group-hover:text-primary transition-colors">
+                  {t.name}
+                </h3>
+                <div className="font-display text-[10px] tracking-[0.25em] text-muted-foreground mb-3">
+                  {t.title.toUpperCase()}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                  {t.desc}
+                </p>
+                <div className="mt-4 font-display text-[10px] tracking-[0.25em] text-primary">
+                  VIEW PROFILE →
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {t.desc}
-              </p>
-
               <div className="absolute -top-px -right-px w-8 h-8 border-t-2 border-r-2 border-primary/0 group-hover:border-primary transition-colors pointer-events-none" />
-            </motion.div>
+            </motion.button>
           ))}
         </div>
       </div>
+
+      <Dialog open={active !== null} onOpenChange={(o) => !o && setActive(null)}>
+        <DialogContent className="max-w-3xl p-0 overflow-hidden bg-card border-primary/40">
+          {active !== null && (
+            <div className="grid md:grid-cols-2">
+              <div className="relative aspect-[4/5] md:aspect-auto bg-background">
+                <img
+                  src={trainers[active].image}
+                  alt={trainers[active].name}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="p-7 md:p-9 flex flex-col justify-center">
+                <div className="font-display text-[10px] tracking-[0.3em] text-primary mb-3">
+                  — LMF COACH
+                </div>
+                <DialogTitle className="font-display text-2xl md:text-3xl mb-2">
+                  {trainers[active].name}
+                </DialogTitle>
+                <div className="font-display text-[11px] tracking-[0.25em] text-muted-foreground mb-5">
+                  {trainers[active].title.toUpperCase()}
+                </div>
+                <div className="inline-flex self-start font-display text-[10px] tracking-[0.25em] text-primary border border-primary/50 px-3 py-1.5 mb-6">
+                  {trainers[active].experience} EXPERIENCE
+                </div>
+                <DialogDescription className="text-base text-foreground/80 leading-relaxed">
+                  {trainers[active].desc}
+                </DialogDescription>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

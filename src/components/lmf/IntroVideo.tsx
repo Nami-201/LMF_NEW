@@ -31,7 +31,7 @@ const IntroVideo = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] bg-background flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-background/90 flex items-center justify-center p-8"
         >
           <video
             ref={videoRef}
@@ -40,7 +40,7 @@ const IntroVideo = () => {
             muted
             playsInline
             onEnded={finish}
-            className="h-full w-full object-cover"
+            className="max-h-[70vh] max-w-[70vw] rounded-xl shadow-2xl"
           />
           <button
             onClick={finish}

@@ -11,7 +11,6 @@ import Footer from "@/components/lmf/Footer";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <IntroVideo />
       <Navbar />
       <Hero />
       <About />

@@ -1,5 +1,6 @@
 import Navbar from "@/components/lmf/Navbar";
 import Hero from "@/components/lmf/Hero";
+import IntroVideo from "@/components/lmf/IntroVideo";
 import About from "@/components/lmf/About";
 import Equipment from "@/components/lmf/Equipment";
 import Locations from "@/components/lmf/Locations";
@@ -11,6 +12,7 @@ import Footer from "@/components/lmf/Footer";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <IntroVideo />
       <Navbar />
       <Hero />
       <About />

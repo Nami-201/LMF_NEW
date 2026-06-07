@@ -87,9 +87,8 @@ const Programs = () => {
             {programs.map((p, i) => (
               <motion.article
                 key={p.code}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: (i % 3) * 0.12 }}
                 className="group relative overflow-hidden bg-card border border-border hover:border-primary/60 transition-all duration-500 hover:shadow-glow hover:-translate-y-1"
               >

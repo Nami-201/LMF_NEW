@@ -12,7 +12,7 @@ const trainers = [
   {
     image: rasoul,
     name: "Coach Rasoul",
-    title: "Master Coach",
+    title: "Fitness Manager — HRBR",
     experience: "15 yrs",
     desc: "15 Years of Experience, 250+ Transformations, 100% Dedication.",
   },

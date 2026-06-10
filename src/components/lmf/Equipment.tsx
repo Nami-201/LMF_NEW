@@ -19,7 +19,7 @@ const trainers = [
   {
     image: imran,
     name: "Coach Imran",
-    title: "Club Manager · Kammanahalli",
+    title: "Fitness Manager — Kammanahalli",
     experience: "10+ yrs",
     desc: "Experience of over 10 years. 250+ Transformations, Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
   },

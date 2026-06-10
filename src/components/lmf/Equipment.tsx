@@ -12,14 +12,14 @@ const trainers = [
   {
     image: rasoul,
     name: "Coach Rasoul",
-    title: "Master Coach",
+    title: "Fitness Manager — HRBR",
     experience: "15 yrs",
     desc: "15 Years of Experience, 250+ Transformations, 100% Dedication.",
   },
   {
     image: imran,
     name: "Coach Imran",
-    title: "Club Manager · Kammanahalli",
+    title: "Fitness Manager — Kammanahalli",
     experience: "10+ yrs",
     desc: "Experience of over 10 years. 250+ Transformations, Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
   },

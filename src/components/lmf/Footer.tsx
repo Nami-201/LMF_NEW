@@ -93,7 +93,7 @@ const Footer = () => {
             <div className={`mt-8 space-y-3 max-w-md rounded-md p-3 -m-3 transition-all duration-500 ${highlight ? "ring-2 ring-primary shadow-glow animate-pulse bg-primary/5" : ""}`}>
               <h4 className="font-display text-[10px] tracking-[0.2em] text-primary mb-3">WHATSAPP ENQUIRY</h4>
               <a
-                href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Kammanahalli%20branch."
+                href="https://wa.me/919886781967?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20gym%20membership%20plans%20at%20your%20Kammanahalli%20Branch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full font-display text-[10px] tracking-[0.2em] px-4 py-3 bg-background border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.02] transition-all duration-300"
@@ -104,7 +104,7 @@ const Footer = () => {
                 Enquire – Kammanahalli
               </a>
               <a
-                href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20HRBR%20branch."
+                href="https://wa.me/919886781967?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20gym%20membership%20plans%20at%20your%20HRBR%20Branch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full font-display text-[10px] tracking-[0.2em] px-4 py-3 bg-background border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.02] transition-all duration-300"

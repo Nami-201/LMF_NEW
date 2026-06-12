@@ -117,7 +117,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-2">
           <a
-            href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Kammanahalli%20branch."
+            href="https://wa.me/919886781967?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20gym%20membership%20plans%20at%20your%20Kammanahalli%20Branch"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 font-display text-[9px] tracking-[0.2em] px-3 py-2 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
@@ -127,7 +127,7 @@ const Navbar = () => {
             KMN
           </a>
           <a
-            href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20HRBR%20branch."
+            href="https://wa.me/919886781967?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20gym%20membership%20plans%20at%20your%20HRBR%20Branch"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 font-display text-[9px] tracking-[0.2em] px-3 py-2 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
@@ -162,7 +162,7 @@ const Navbar = () => {
             </ul>
             <div className="px-6 pb-6 flex flex-col gap-2">
               <a
-                href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Kammanahalli%20branch."
+                href="https://wa.me/919886781967?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20gym%20membership%20plans%20at%20your%20Kammanahalli%20Branch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 font-display text-[10px] tracking-[0.2em] px-4 py-3 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
@@ -171,7 +171,7 @@ const Navbar = () => {
                 Enquire – Kammanahalli
               </a>
               <a
-                href="https://wa.me/919886781967?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20HRBR%20branch."
+                href="https://wa.me/919886781967?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20gym%20membership%20plans%20at%20your%20HRBR%20Branch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 font-display text-[10px] tracking-[0.2em] px-4 py-3 border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"

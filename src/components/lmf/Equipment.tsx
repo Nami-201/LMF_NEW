@@ -8,50 +8,70 @@ import sinclair from "@/assets/trainers/sinclair.jpg";
 import imran from "@/assets/trainers/imran.jpg";
 import rasoul from "@/assets/trainers/rasoul.jpg";
 
-const trainers = [
+type Trainer = {
+  image: string;
+  name: string;
+  title: string;
+  experience: string;
+  desc: string;
+};
+
+const branches: { branch: string; trainers: Trainer[] }[] = [
   {
-    image: rasoul,
-    name: "Coach Rasoul",
-    title: "Fitness Manager — HRBR",
-    experience: "15 yrs",
-    desc: "15 Years of Experience, 250+ Transformations, 100% Dedication.",
+    branch: "Kammanahalli Branch",
+    trainers: [
+      {
+        image: imran,
+        name: "Coach Imran",
+        title: "Fitness Manager — Kammanahalli",
+        experience: "10+ yrs",
+        desc: "Experience of over 10 years. 250+ Transformations, Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
+      },
+      {
+        image: sathya,
+        name: "Coach Sathya",
+        title: "Certified Personal Trainer",
+        experience: "10+ yrs",
+        desc: "Certified fitness expert with 10+ years of experience. CPR Certified, Certified Personal Trainer.",
+      },
+    ],
   },
   {
-    image: imran,
-    name: "Coach Imran",
-    title: "Fitness Manager — Kammanahalli",
-    experience: "10+ yrs",
-    desc: "Experience of over 10 years. 250+ Transformations, Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
-  },
-  {
-    image: sathya,
-    name: "Coach Sathya",
-    title: "Certified Personal Trainer",
-    experience: "10+ yrs",
-    desc: "Certified fitness expert with 10+ years of experience. CPR Certified, Certified Personal Trainer.",
-  },
-  {
-    image: sinclair,
-    name: "Coach Sinclair",
-    title: "Functional Training",
-    experience: "5+ yrs",
-    desc: "Certified fitness expert with 5+ years of experience, specializing in functional training and body transformation.",
-  },
-  {
-    image: emmanuel,
-    name: "Coach Emmanuel",
-    title: "Strength & Conditioning",
-    experience: "5 yrs",
-    desc: "Certified CPT, Strength & Conditioning Specialist, and Nutrition Coach from Spartan Official Academy with 5 years of hands-on experience in fitness.",
-  },
-  {
-    image: rawlin,
-    name: "Coach Rawlin",
-    title: "Fitness Instructor",
-    experience: "2.5 yrs",
-    desc: "Certified fitness instructor at New Skills Academy, certified in nutrition with FBX training. Experience: 2 and a half years.",
+    branch: "HRBR Branch",
+    trainers: [
+      {
+        image: rasoul,
+        name: "Coach Rasoul",
+        title: "Fitness Manager — HRBR",
+        experience: "15 yrs",
+        desc: "15 Years of Experience, 250+ Transformations, 100% Dedication.",
+      },
+      {
+        image: sinclair,
+        name: "Coach Sinclair",
+        title: "Functional Training",
+        experience: "5+ yrs",
+        desc: "Certified fitness expert with 5+ years of experience, specializing in functional training and body transformation.",
+      },
+      {
+        image: emmanuel,
+        name: "Coach Emmanuel",
+        title: "Strength & Conditioning",
+        experience: "5 yrs",
+        desc: "Certified CPT, Strength & Conditioning Specialist, and Nutrition Coach from Spartan Official Academy with 5 years of hands-on experience in fitness.",
+      },
+      {
+        image: rawlin,
+        name: "Coach Rawlin",
+        title: "Fitness Instructor",
+        experience: "2.5 yrs",
+        desc: "Certified fitness instructor at New Skills Academy, certified in nutrition with FBX training. Experience: 2 and a half years.",
+      },
+    ],
   },
 ];
+
+const trainers: Trainer[] = branches.flatMap((b) => b.trainers);
 
 const Equipment = () => {
   const [active, setActive] = useState<number | null>(null);

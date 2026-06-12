@@ -105,46 +105,72 @@ const Equipment = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {trainers.map((t, i) => (
-            <motion.button
-              type="button"
-              onClick={() => setActive(i)}
-              key={t.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group relative bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow overflow-hidden cursor-pointer"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={t.image}
-                  alt={`${t.name} — ${t.title}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="inline-flex font-display text-[9px] tracking-[0.2em] text-primary border border-primary/50 px-2.5 py-1 mb-3">
-                    {t.experience} EXPERIENCE
-                  </div>
-                  <h3 className="font-display text-xl md:text-2xl text-foreground mb-1">
-                    {t.name}
-                  </h3>
-                  <p className="font-display text-[11px] tracking-[0.2em] text-muted-foreground mb-3">
-                    {t.title.toUpperCase()}
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
-                    {t.desc}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] text-primary">
-                    VIEW PROFILE <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+        <div className="space-y-16">
+          {branches.map((b) => (
+            <div key={b.branch}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-4 mb-8"
+              >
+                <span className="h-px flex-1 bg-border" />
+                <h3 className="font-display text-xl md:text-2xl tracking-[0.15em] text-foreground whitespace-nowrap">
+                  {b.branch.split(" ")[0]}{" "}
+                  <span className="text-primary text-glow">
+                    {b.branch.split(" ").slice(1).join(" ")}
                   </span>
-                </div>
+                </h3>
+                <span className="h-px flex-1 bg-border" />
+              </motion.div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {b.trainers.map((t, i) => {
+                  const globalIndex = trainers.indexOf(t);
+                  return (
+                    <motion.button
+                      type="button"
+                      onClick={() => setActive(globalIndex)}
+                      key={t.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+                      className="group relative bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow overflow-hidden cursor-pointer"
+                    >
+                      <div className="relative aspect-[4/5] overflow-hidden">
+                        <img
+                          src={t.image}
+                          alt={`${t.name} — ${t.title}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-5">
+                          <div className="inline-flex font-display text-[9px] tracking-[0.2em] text-primary border border-primary/50 px-2.5 py-1 mb-3">
+                            {t.experience} EXPERIENCE
+                          </div>
+                          <h3 className="font-display text-xl md:text-2xl text-foreground mb-1">
+                            {t.name}
+                          </h3>
+                          <p className="font-display text-[11px] tracking-[0.2em] text-muted-foreground mb-3">
+                            {t.title.toUpperCase()}
+                          </p>
+                          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
+                            {t.desc}
+                          </p>
+                          <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] text-primary">
+                            VIEW PROFILE <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="absolute -top-px -right-px w-8 h-8 border-t-2 border-r-2 border-primary/0 group-hover:border-primary transition-colors pointer-events-none" />
+                    </motion.button>
+                  );
+                })}
               </div>
-              <div className="absolute -top-px -right-px w-8 h-8 border-t-2 border-r-2 border-primary/0 group-hover:border-primary transition-colors pointer-events-none" />
-            </motion.button>
+            </div>
           ))}
         </div>
       </div>

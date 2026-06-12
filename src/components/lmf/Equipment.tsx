@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import emmanuel from "@/assets/trainers/emmanuel.jpg";
 import rawlin from "@/assets/trainers/rawlin.jpg";
 import sathya from "@/assets/trainers/sathya.jpg";
-import sinclair from "@/assets/trainers/sinclair.jpg";
+
 import imran from "@/assets/trainers/imran.jpg";
 import rasoul from "@/assets/trainers/rasoul.jpg";
 
@@ -45,13 +45,6 @@ const branches: { branch: string; trainers: Trainer[] }[] = [
         title: "Fitness Manager — HRBR",
         experience: "15 yrs",
         desc: "15 Years of Experience, 250+ Transformations, 100% Dedication.",
-      },
-      {
-        image: sinclair,
-        name: "Coach Sinclair",
-        title: "Functional Training",
-        experience: "5+ yrs",
-        desc: "Certified fitness expert with 5+ years of experience, specializing in functional training and body transformation.",
       },
       {
         image: emmanuel,

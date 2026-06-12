@@ -53,12 +53,6 @@ const branches: { branch: string; trainers: Trainer[] }[] = [
         experience: "5 yrs",
         desc: "Certified CPT, Strength & Conditioning Specialist, and Nutrition Coach from Spartan Official Academy with 5 years of hands-on experience in fitness.",
       },
-        image: emmanuel,
-        name: "Coach Emmanuel",
-        title: "Strength & Conditioning",
-        experience: "5 yrs",
-        desc: "Certified CPT, Strength & Conditioning Specialist, and Nutrition Coach from Spartan Official Academy with 5 years of hands-on experience in fitness.",
-      },
       {
         image: rawlin,
         name: "Coach Rawlin",

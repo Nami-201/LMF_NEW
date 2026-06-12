@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import emmanuel from "@/assets/trainers/emmanuel.jpg";
 import rawlin from "@/assets/trainers/rawlin.jpg";
 import sathya from "@/assets/trainers/sathya.jpg";
-import sinclair from "@/assets/trainers/sinclair.jpg";
+
 import imran from "@/assets/trainers/imran.jpg";
 import rasoul from "@/assets/trainers/rasoul.jpg";
 

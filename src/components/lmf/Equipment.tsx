@@ -24,8 +24,8 @@ const branches: { branch: string; trainers: Trainer[] }[] = [
         image: imran,
         name: "Coach Imran",
         title: "Fitness Manager — Kammanahalli",
-        experience: "10+ yrs",
-        desc: "Experience of over 10 years. 250+ Transformations, Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
+        experience: "12+ yrs",
+        desc: "Experience of over 12 years. 250+ Transformations, Certified Personal Trainer, Nutrition Consultant, CPR Certified, Club Manager — Kammanahalli.",
       },
       {
         image: sathya,

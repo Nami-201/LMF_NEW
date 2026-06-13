@@ -132,6 +132,9 @@ const Equipment = () => {
                       transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                       className="group relative bg-card border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-glow overflow-hidden cursor-pointer"
                     >
+                      <div className="absolute top-3 right-3 z-10 font-display text-[9px] tracking-[0.2em] text-primary border border-primary/50 bg-background/80 backdrop-blur-sm px-2.5 py-1">
+                        {t.experience} EXPERIENCE
+                      </div>
                       <div className="relative aspect-[4/5] overflow-hidden">
                         <img
                           src={t.image}
@@ -141,9 +144,6 @@ const Equipment = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-5">
-                          <div className="inline-flex font-display text-[9px] tracking-[0.2em] text-primary border border-primary/50 px-2.5 py-1 mb-3">
-                            {t.experience} EXPERIENCE
-                          </div>
                           <h3 className="font-display text-xl md:text-2xl text-foreground mb-1">
                             {t.name}
                           </h3>

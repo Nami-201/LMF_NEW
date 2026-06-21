@@ -6,6 +6,7 @@ import rawlin from "@/assets/trainers/rawlin.jpg";
 import sathya from "@/assets/trainers/sathya.jpg";
 
 import imran from "@/assets/trainers/imran.jpg";
+import manju from "@/assets/trainers/manju.jpg";
 import rasoul from "@/assets/trainers/rasoul.jpg";
 
 type Trainer = {

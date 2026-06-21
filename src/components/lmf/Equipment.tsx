@@ -41,7 +41,7 @@ const branches: { branch: string; trainers: Trainer[] }[] = [
     trainers: [
       {
         image: rasoul,
-        name: "Coach Rasoul",
+        name: "Fitness Manager Rasoul",
         title: "Fitness Manager — HRBR",
         experience: "15 yrs",
         desc: "15 Years of Experience, 250+ Transformations, 100% Dedication.",

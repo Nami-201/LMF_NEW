@@ -35,6 +35,13 @@ const branches: { branch: string; trainers: Trainer[] }[] = [
         experience: "10+ yrs",
         desc: "Certified fitness expert with 10+ years of experience. CPR Certified, Certified Personal Trainer.",
       },
+      {
+        image: manju,
+        name: "Coach Manju Nath",
+        title: "Certified Personal Trainer",
+        experience: "5 yrs",
+        desc: "Certified trainer, nutrition certified, CPR certified with 5 years of experience.",
+      },
     ],
   },
   {

@@ -147,9 +147,6 @@ const Equipment = () => {
                           <h3 className="font-display text-xl md:text-2xl text-foreground mb-1">
                             {t.name}
                           </h3>
-                          <p className="font-display text-[11px] tracking-[0.2em] text-muted-foreground mb-3">
-                            {t.title.toUpperCase()}
-                          </p>
                           <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
                             {t.desc}
                           </p>

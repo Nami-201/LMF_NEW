@@ -6,6 +6,7 @@ import rawlin from "@/assets/trainers/rawlin.jpg";
 import sathya from "@/assets/trainers/sathya.jpg";
 
 import imran from "@/assets/trainers/imran.jpg";
+import manju from "@/assets/trainers/manju.jpg";
 import rasoul from "@/assets/trainers/rasoul.jpg";
 
 type Trainer = {
@@ -33,6 +34,13 @@ const branches: { branch: string; trainers: Trainer[] }[] = [
         title: "Certified Personal Trainer",
         experience: "10+ yrs",
         desc: "Certified fitness expert with 10+ years of experience. CPR Certified, Certified Personal Trainer.",
+      },
+      {
+        image: manju,
+        name: "Coach Manju Nath",
+        title: "Certified Personal Trainer",
+        experience: "5 yrs",
+        desc: "Certified trainer, nutrition certified, CPR certified with 5 years of experience.",
       },
     ],
   },

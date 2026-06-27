@@ -7,11 +7,14 @@ import Gallery from "@/components/lmf/Gallery";
 import Reviews from "@/components/lmf/Reviews";
 import CTA from "@/components/lmf/CTA";
 import Footer from "@/components/lmf/Footer";
+import OfferPopup from "@/components/lmf/OfferPopup";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <OfferPopup />
       <Navbar />
+
       <Hero />
       <About />
       <Equipment />

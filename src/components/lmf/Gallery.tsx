@@ -92,40 +92,49 @@ const BranchGallery = ({ id, eyebrow, title, subtitle, images, onOpen }: BranchG
             </p>
           </motion.div>
         ) : (
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
-            {images.map((img, i) => (
-              <motion.button
-                key={img.url}
-                type="button"
-                onClick={() => onOpen(images, i)}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.6,
-                  delay: Math.min(i * 0.06, 0.4),
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="group relative mb-5 block w-full overflow-hidden rounded-2xl border border-primary/15 bg-card/40 backdrop-blur-sm shadow-card transition-all duration-500 hover:border-primary/60 hover:shadow-glow-lg break-inside-avoid"
-              >
-                <img
-                  src={img.url}
-                  alt={`${title} — ${img.name}`}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                />
-                {/* Hover overlay */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                {/* Neon ring */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary/0 transition-all duration-500 group-hover:ring-primary/70 group-hover:shadow-[inset_0_0_40px_hsl(var(--primary)/0.35)]" />
-                {/* Corner ticks */}
-                <span className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-primary/0 transition-colors duration-500 group-hover:border-primary" />
-                <span className="pointer-events-none absolute right-3 bottom-3 h-4 w-4 border-r border-b border-primary/0 transition-colors duration-500 group-hover:border-primary" />
-              </motion.button>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {images.map((img, i) => (
+                  <CarouselItem
+                    key={img.url}
+                    className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => onOpen(images, i)}
+                      className="group relative block w-full aspect-[4/5] overflow-hidden rounded-2xl border border-primary/15 bg-card/40 backdrop-blur-sm shadow-card transition-all duration-500 hover:border-primary/60 hover:shadow-glow-lg"
+                    >
+                      <img
+                        src={img.url}
+                        alt={`${title} — ${img.name}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary/0 transition-all duration-500 group-hover:ring-primary/70 group-hover:shadow-[inset_0_0_40px_hsl(var(--primary)/0.35)]" />
+                      <span className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-primary/0 transition-colors duration-500 group-hover:border-primary" />
+                      <span className="pointer-events-none absolute right-3 bottom-3 h-4 w-4 border-r border-b border-primary/0 transition-colors duration-500 group-hover:border-primary" />
+                    </button>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2 md:-left-6 h-10 w-10 border-primary/40 bg-background/70 text-foreground hover:bg-primary hover:text-primary-foreground" />
+              <CarouselNext className="right-2 md:-right-6 h-10 w-10 border-primary/40 bg-background/70 text-foreground hover:bg-primary hover:text-primary-foreground" />
+            </Carousel>
+          </motion.div>
         )}
+
       </div>
     </section>
   );

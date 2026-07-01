@@ -8,7 +8,6 @@ import Reviews from "@/components/lmf/Reviews";
 import CTA from "@/components/lmf/CTA";
 import Footer from "@/components/lmf/Footer";
 import OfferPopup from "@/components/lmf/OfferPopup";
-import RateCard from "@/components/lmf/RateCard";
 
 const Index = () => {
   return (
@@ -21,8 +20,8 @@ const Index = () => {
       <Equipment />
       <Locations />
       <Gallery />
-      <RateCard />
       <Reviews />
+
 
       <CTA />
       <Footer />

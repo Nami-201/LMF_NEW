@@ -7,8 +7,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@/components/ui/carousel";
+
 
 
 // Dynamically pick up any images dropped into these folders

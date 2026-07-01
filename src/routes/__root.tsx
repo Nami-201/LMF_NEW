@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import OfferPopup from "@/components/lmf/OfferPopup";
+
 
 function NotFoundComponent() {
   return (
@@ -124,8 +126,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <OfferPopup />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
 }
+

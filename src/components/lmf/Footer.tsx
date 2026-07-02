@@ -124,6 +124,7 @@ const Footer = () => {
                 { label: "About", href: "/#about", type: "hash" },
                 { label: "Programs", href: "/programs", type: "route" },
                 { label: "Locations", href: "/locations", type: "route" },
+                { label: "Pricing", href: "/pricing", type: "route" },
                 { label: "Reviews", href: "/#reviews", type: "hash" },
               ].map((l) => (
                 <li key={l.label}>

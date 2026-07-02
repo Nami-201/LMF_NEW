@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import rateCardAsset from "@/assets/rate-card.png.asset.json";
+const rateCardAsset = { url: "/rate-card.png" };
 
 const RateCard = () => {
   return (
